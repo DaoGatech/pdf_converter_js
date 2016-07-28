@@ -1,0 +1,26 @@
+{
+  "name": "pdf_converter_js",
+  "version": "1.0.0",
+  "description": "plugin to convert html element to pdf",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaoGatech/pdf_converter_js.git"
+  },
+  "keywords": [
+    "pdf_converter"
+  ],
+  "author": "Thong Dao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaoGatech/pdf_converter_js/issues"
+  },
+  "homepage": "https://github.com/DaoGatech/pdf_converter_js#readme"
+}

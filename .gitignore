@@ -1,1 +1,6 @@
 .DS_Store
+**/.DS_Store
+.idea/misc.xml
+.idea/modules.xml
+.idea/pdf_converter_js.iml
+.idea/workspace.xml
