@@ -6,7 +6,9 @@
   "dependencies": {
     "grunt": "^1.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-jshint": "^1.0.0"
+  },
   "scripts": {
     "test": "grunt"
   },
