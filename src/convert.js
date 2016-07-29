@@ -1,68 +1,13 @@
 /*
     Helper Functions to convert html elements to pdf
  */
-var parseContainer = function(cnt, e, p, styles) {
-    var elements = []
-    var children = e.childNodes
-    var i
-    if (children.length !== 0) {
-        for (i = 0; i < children.length; i++) {
-            p = parseElement(elements, children[i], p, styles)
-        }
-    }
-    if (elements.length !== 0) {
-        for (i = 0; i < elements.length; i++) {
-            cnt.push(elements[i])
-        }
-    }
-    return p
-}
 
-var computeStyle = function(o, styles) {
-    for (var i = 0; i < styles.length; i++) {
-        var st = styles[i].trim().toLowerCase().split(':')
-        if (st.length === 2) {
-            switch (st[0]) {
-                case 'font-size':
-                    o.fontSize = 12
-                    break
-                case 'text-align':
-                    switch (st[1]) {
-                        case 'right':
-                            o.alignment = 'right'
-                            break
-                        case 'center':
-                            o.alignment = 'center'
-                            break
-                    }
-                    break
-                case 'font-weight':
-                    switch (st[1]) {
-                        case 'bold':
-                            o.bold = true
-                            break
-                    }
-                    break
-                case 'text-decoration':
-                    switch (st[1]) {
-                        case 'underline':
-                            o.decoration = 'underline'
-                            break
-                    }
-                    break
-                case 'font-style':
-                    switch (st[1]) {
-                        case 'italic':
-                            o.italics = true
-                            break
-                    }
-                    break
-            }
-        }
-    }
-}
+'use strict'
 
-var parseElement =  function(cnt, e, p, styles) {
+//Define global functions
+var parseElement, parseContainer, computeStyle, parseHTML, createParagraph
+
+parseElement =  function(cnt, e, p, styles) {
     if (!styles) {
         styles = []
     }
@@ -161,7 +106,70 @@ var parseElement =  function(cnt, e, p, styles) {
     return p
 }
 
-var parseHTML = function(cnt, htmlText) {
+
+parseContainer = function(cnt, e, p, styles) {
+    var elements = []
+    var children = e.childNodes
+    var i
+    if (children.length !== 0) {
+        for (i = 0; i < children.length; i++) {
+            p = parseElement(elements, children[i], p, styles)
+        }
+    }
+    if (elements.length !== 0) {
+        for (i = 0; i < elements.length; i++) {
+            cnt.push(elements[i])
+        }
+    }
+    return p
+}
+
+computeStyle = function(o, styles) {
+    for (var i = 0; i < styles.length; i++) {
+        var st = styles[i].trim().toLowerCase().split(':')
+        if (st.length === 2) {
+            switch (st[0]) {
+                case 'font-size':
+                    o.fontSize = 12
+                    break
+                case 'text-align':
+                    switch (st[1]) {
+                        case 'right':
+                            o.alignment = 'right'
+                            break
+                        case 'center':
+                            o.alignment = 'center'
+                            break
+                    }
+                    break
+                case 'font-weight':
+                    switch (st[1]) {
+                        case 'bold':
+                            o.bold = true
+                            break
+                    }
+                    break
+                case 'text-decoration':
+                    switch (st[1]) {
+                        case 'underline':
+                            o.decoration = 'underline'
+                            break
+                    }
+                    break
+                case 'font-style':
+                    switch (st[1]) {
+                        case 'italic':
+                            o.italics = true
+                            break
+                    }
+                    break
+            }
+        }
+    }
+}
+
+
+parseHTML = function(cnt, htmlText) {
     var html = $(htmlText.replace(/\t/g, '').replace(/\n/g, '').replace(/\s\s+/g, ' '))
     var p = createParagraph()
     for (var i = 0; i < html.length; i++) {
@@ -169,7 +177,7 @@ var parseHTML = function(cnt, htmlText) {
     }
 }
 
-var createParagraph = function() {
+createParagraph = function() {
     var p = {
         text: []
     }

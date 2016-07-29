@@ -1,16 +1,23 @@
-/* jshint node: true */
-'use strict';
+'use strict'
 
 module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
-            all: ['Gruntfile.js', 'src/*.js', 'test/*.js']
+            text: {
+                src: [
+                    'src/*.js',
+                    'test/*.js'
+                ],
+                options: {
+                    jshintrc: '.jshintrc'
+                }
+            }
         }
     });
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('default', ['test']);
+    grunt.loadNpmTasks('grunt-contrib-jshint')
+    grunt.registerTask('test', ['jshint'])
+    grunt.registerTask('default', ['test'])
 
 };
