@@ -4,7 +4,7 @@ Plugin to convert any html element to pdf
 ## Description
 TODO
 
-## Instalation
+## Installation
 TODO
 
 ## Usage
