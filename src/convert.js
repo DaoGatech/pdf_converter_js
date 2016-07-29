@@ -184,8 +184,25 @@ createParagraph = function() {
     return p
 }
 
+function fixTables(data) {
+    var table_objects = []
+    dfs_table(table_objects, data)
+    for(var i = 0; i < table_objects.length; i++) {
+        fixColSpan(table_objects[i])
+        fixRowSpan((table_objects[i]))
+    }
+}
 
-
+function dfs_table(table_objects, data) {
+    for(var i = 0; i < data.length; i++) {
+        if(data[i].table !== undefined) {
+            table_objects.push(data[i].table)
+        }
+        if(data[i].stack !== undefined) {
+            dfs_table(table_objects,data[i].stack)
+        }
+    }
+}
 function fixRowSpan(table) {
     var i,j,t
     for(i = 0; i < table.body.length; i++) {
@@ -217,4 +234,6 @@ function fixColSpan(table) {
         }
     }
 }
+
+
 
