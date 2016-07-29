@@ -5,7 +5,7 @@
 'use strict'
 
 //Define global functions
-var parseElement, parseContainer, computeStyle, parseHTML, createParagraph
+var parseElement, parseContainer, computeStyle, parseHTML, createParagraph, fixTables, fixRowSpan, fixColSpan, dfs_table
 
 parseElement =  function(cnt, e, p, styles) {
     if (!styles) {
@@ -184,7 +184,7 @@ createParagraph = function() {
     return p
 }
 
-function fixTables(data) {
+fixTables = function(data) {
     var table_objects = []
     dfs_table(table_objects, data)
     for(var i = 0; i < table_objects.length; i++) {
@@ -193,7 +193,7 @@ function fixTables(data) {
     }
 }
 
-function dfs_table(table_objects, data) {
+dfs_table = function(table_objects, data) {
     for(var i = 0; i < data.length; i++) {
         if(data[i].table !== undefined) {
             table_objects.push(data[i].table)
@@ -203,7 +203,8 @@ function dfs_table(table_objects, data) {
         }
     }
 }
-function fixRowSpan(table) {
+
+fixRowSpan = function(table) {
     var i,j,t
     for(i = 0; i < table.body.length; i++) {
         for(j = 0; j < table.body[i].length; j++) {
@@ -216,7 +217,7 @@ function fixRowSpan(table) {
     }
 }
 
-function fixColSpan(table) {
+fixColSpan = function(table) {
     var i,j,t
     for(i = 0; i < table.body.length; i++) {
         for(j = 0; j < table.body[i].length; j++) {
