@@ -1,8 +1,14 @@
 # pdf_converter_js
 Plugin to convert any html element to pdf
 
-# Instalation
+## Description
 TODO
 
-# Usage
+## Instalation
+TODO
+
+## Usage
+TODO
+
+##Examples
 TODO
