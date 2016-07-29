@@ -183,3 +183,38 @@ createParagraph = function() {
     }
     return p
 }
+
+
+
+function fixRowSpan(table) {
+    var i,j,t
+    for(i = 0; i < table.body.length; i++) {
+        for(j = 0; j < table.body[i].length; j++) {
+            if(table.body[i][j].rowSpan !== undefined && table.body[i][j].rowSpan > 1) {
+                for(t = 0; t < table.body[i][j].rowSpan - 1; t++) {
+                    table.body[i+t+1].splice(j, 0, {})
+                }
+            }
+        }
+    }
+}
+
+function fixColSpan(table) {
+    var i,j,t
+    for(i = 0; i < table.body.length; i++) {
+        for(j = 0; j < table.body[i].length; j++) {
+            if(table.body[i][j].colSpan !== undefined && table.body[i][j].colSpan > 1) {
+                if(j === table.body[i].length - 1) {
+                    for(t = 0; t < table.body[i][j].colSpan - 1; t++) {
+                        table.body[i].push({})
+                    }
+                } else {
+                    for(t = 0; t < table.body[i][j].colSpan - 1; t++) {
+                        table.body[i].splice(j+1, 0, {})
+                    }
+                }
+            }
+        }
+    }
+}
+
