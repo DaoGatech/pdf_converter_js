@@ -1,8 +1,8 @@
 # pdf_converter_js
-Plugin to convert any html element to pdf
 
 ## Description
-TODO
+Author: Thong Dao
+This javascript helps convert any html element to pdf.
 
 ## Installation
 TODO
