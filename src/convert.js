@@ -170,6 +170,7 @@ computeStyle = function(o, styles) {
 }
 
 convertToPdf = function(id) {
+    alert('haha')
     var content = []
     parseHTML(content, document.getElementById(id).outerHTML)
     content.splice(0,0,{
