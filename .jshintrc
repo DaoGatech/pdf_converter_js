@@ -27,6 +27,7 @@
     "module"     : true,
     "afterEach"  : false,
     "alert"      : false,
+    "pdfMake"    : true,
     "angular"    : false,
     "angular"    : true,
     "before"     : false,

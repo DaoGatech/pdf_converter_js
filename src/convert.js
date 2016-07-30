@@ -5,7 +5,8 @@
 'use strict'
 
 //Define global functions
-var parseElement, parseContainer, computeStyle, parseHTML, createParagraph, fixTables, fixRowSpan, fixColSpan, dfs_table
+var parseElement, parseContainer, computeStyle, parseHTML, createParagraph, fixTables, fixRowSpan, fixColSpan, dfs_table,
+    convertToPdf
 
 parseElement =  function(cnt, e, p, styles) {
     if (!styles) {
@@ -168,6 +169,27 @@ computeStyle = function(o, styles) {
     }
 }
 
+convertToPdf = function(id) {
+    var content = []
+    parseHTML(content, document.getElementById(id).outerHTML)
+    content.splice(0,0,{
+        text: document.getElementById('modal-title').innerText,
+        style: 'header'
+    })
+
+    fixTables(content)
+    return pdfMake.createPdf({
+        content: content,
+        pageSize: 'LETTER',
+        pageMargins: [ 20, 40, 20, 20 ],
+        styles: {
+            header: {
+                fontSize: 22,
+                bold: true,
+            }
+        }
+    })
+}
 
 parseHTML = function(cnt, htmlText) {
     var html = $(htmlText.replace(/\t/g, '').replace(/\n/g, '').replace(/\s\s+/g, ' '))
