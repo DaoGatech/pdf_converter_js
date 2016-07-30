@@ -1,8 +1,8 @@
 # pdf_converter_js
 
 ## Description
-Author: Thong Dao
-This javascript helps convert any html element to pdf.
+* Author: Thong Dao
+* This javascript helps convert any html element to pdf.
 
 ## Installation
 TODO
