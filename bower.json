@@ -1,0 +1,24 @@
+{
+  "name": "pdf_converter_js",
+  "description": "plugin to convert html element to pdf",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Thong Dao"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "pdf_converter"
+  ],
+  "homepage": "https://github.com/DaoGatech/pdf_converter_js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pdfmake": "^0.1.20"
+  }
+}

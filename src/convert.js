@@ -57,7 +57,7 @@ parseElement =  function(cnt, e, p, styles) {
                 }
             }
             parseContainer(t.table.body, e, p, styles)
-            for (k = 0; k < 7; k++) {
+            for (k = 0; k < 3; k++) {
                 t.table.widths.push('*')
             }
             cnt.push(t)
@@ -170,14 +170,8 @@ computeStyle = function(o, styles) {
 }
 
 convertToPdf = function(id) {
-    alert('haha')
     var content = []
     parseHTML(content, document.getElementById(id).outerHTML)
-    content.splice(0,0,{
-        text: document.getElementById('modal-title').innerText,
-        style: 'header'
-    })
-
     fixTables(content)
     return pdfMake.createPdf({
         content: content,

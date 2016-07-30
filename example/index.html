@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../bower_components/pdfmake/build/pdfmake.min.js"></script>
     <script src="../src/convert.js"></script>
     <style>
         table {
@@ -62,7 +63,7 @@
     </tr>
 </table>
 <button id="whole-page-btn" type="button" class="btn btn-primary">Convert whole page to PDF</button>
-<button id="table-btn" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
+<button onclick="convertToPdf('table-element').download()" id="table-btn" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
 </body>
 </html>
 
