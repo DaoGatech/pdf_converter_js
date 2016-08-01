@@ -5,7 +5,11 @@
 * This javascript helps convert any html element to pdf.
 
 ## Installation
-TODO
+* Install pdfmake via bower
+
+```
+bower install pdfmake --save
+```
 
 ## Usage
 TODO
