@@ -70,6 +70,25 @@ parseElement =  function(cnt, e, p, styles) {
             parseContainer(row, e, p, styles)
             cnt.push(row)
             break
+        case 'th':
+            p = createParagraph()
+            var st = {
+                stack: []
+            }
+            st.stack.push(p)
+            var rspan = e.getAttribute('rowspan')
+            if (rspan) {
+                st.rowSpan = parseInt(rspan)
+            }
+            var cspan = e.getAttribute('colspan')
+            if (cspan) {
+                st.colSpan = parseInt(cspan)
+            }
+            st.alignment = 'center'
+            st.bold = 'true'
+            parseContainer(st.stack, e, p, styles)
+            cnt.push(st)
+            break
         case 'td':
             p = createParagraph()
             var st = {
