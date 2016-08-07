@@ -57,11 +57,18 @@ parseElement =  function(cnt, e, p, styles) {
                 }
             }
             parseContainer(t.table.body, e, p, styles)
-            for (k = 0; k < 3; k++) {
+            var maxLength = Number.MIN_VALUE
+            for(var i = 0; i < t.table.body.length; i++) {
+                if(t.table.body[i].length >= maxLength) {
+                    maxLength = t.table.body[i].length
+                }
+            }
+            for (k = 0; k < maxLength; k++) {
                 t.table.widths.push('*')
             }
             cnt.push(t)
             break
+        case 'thead':
         case 'tbody':
             parseContainer(cnt, e, p, styles)
             break

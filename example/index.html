@@ -19,14 +19,11 @@
             padding: 8px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
     </style>
 </head>
 <body id="body-element">
-
-<table id="table-element">
+<h3>Simple HTML Table</h3>
+<table id="simple-table-element">
     <tr>
         <th>Company</th>
         <th>Contact</th>
@@ -63,8 +60,43 @@
         <td>Italy</td>
     </tr>
 </table>
-<button id="whole-page-btn" type="button" class="btn btn-primary">Convert whole page to PDF</button>
-<button onclick="convertToPdf('table-element').download()" id="table-btn" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
+<button onclick="convertToPdf('simple-table-element').download()" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
+<h3>Tables with Row Span / Col Span</h3>
+<table id="rowspan-table-element">
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+        <th>Savings for holiday!</th>
+    </tr>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+        <td rowspan="2">$50</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+</table>
+<button onclick="convertToPdf('rowspan-table-element').download()" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
+<table id="rowspan-table-element2">
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    <tr>
+        <td>January</td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+    <tr>
+        <td colspan="2">Sum: $180</td>
+    </tr>
+</table>
+<button onclick="convertToPdf('rowspan-table-element2').download()" type="button" class="btn btn-primary">Convert Table Element to PDF</button>
 </body>
 </html>
 
