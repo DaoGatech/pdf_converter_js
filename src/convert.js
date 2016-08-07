@@ -98,15 +98,15 @@ parseElement =  function(cnt, e, p, styles) {
             break
         case 'td':
             p = createParagraph()
-            var st = {
+            st = {
                 stack: []
             }
             st.stack.push(p)
-            var rspan = e.getAttribute('rowspan')
+            rspan = e.getAttribute('rowspan')
             if (rspan) {
                 st.rowSpan = parseInt(rspan)
             }
-            var cspan = e.getAttribute('colspan')
+            cspan = e.getAttribute('colspan')
             if (cspan) {
                 st.colSpan = parseInt(cspan)
             }
