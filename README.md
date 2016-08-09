@@ -12,7 +12,13 @@ bower install pdfmake --save
 ```
 
 ## Usage
-TODO
+Set onclick function to a button or an input with this line
+```
+convertToPdf(id).download()
+```
+* Where *id* is the id of HTML element.
+
+See Examples for more details
 
 ##Examples
 TODO
