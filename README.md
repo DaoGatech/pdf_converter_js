@@ -22,3 +22,6 @@ See Examples for more details
 
 ##Examples
 TODO
+
+##Tests
+TODO
