@@ -1,7 +1,3 @@
-/*
-    Helper Functions to convert html elements to pdf
- */
-
 'use strict'
 
 //Define global functions
