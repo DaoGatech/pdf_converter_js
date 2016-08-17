@@ -18,18 +18,13 @@ module.exports = function(grunt) {
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
-            },
-            //continuous integration mode: run tests once in PhantomJS browser.
-            continuous: {
-                configFile: 'karma.conf.js',
-                singleRun: true,
-                browsers: ['PhantomJS']
-            },
+            }
         }
     })
     grunt.loadNpmTasks('grunt-contrib-jshint')
     grunt.loadNpmTasks('grunt-karma')
     grunt.registerTask('test', ['jshint'])
+    grunt.registerTask('unit-test', ['karma'])
     grunt.registerTask('default', ['test'])
 
 }
