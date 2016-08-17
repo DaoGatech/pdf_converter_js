@@ -17,7 +17,9 @@ module.exports = function(config) {
     files: [
       'src/*.js',
       'test/*.js',
-      'test/*.js'
+      'test/*.js',
+      'bower_components/pdfmake/build/pdfmake.min.js',
+      'bower_components/jquery/dist/jquery.min.js'
     ],
 
     plugins : ['karma-jasmine', 'karma-phantomjs-launcher', 'karma-coverage'],
