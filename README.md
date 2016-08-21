@@ -28,12 +28,12 @@ TODO
 ```
 grunt test
 ```
-* *grunt-test* will execute jshint to check style and karma to run the unit tests
+* **grunt-test** will execute jshint to check style and karma to run the unit tests
 
 ```
 grunt unit-test
 ```
 
-* *grunt unit-test* will only execute the unit tests
+* **grunt unit-test** will only execute the unit tests
 
 
