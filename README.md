@@ -16,7 +16,7 @@ Set onclick function to a button or an input with this line
 ```
 convertToPdf(id).download()
 ```
-* Where *id* is the id of HTML element.
+* Where **id** is the id of HTML element.
 
 See Examples for more details
 
