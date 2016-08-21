@@ -21,7 +21,13 @@ convertToPdf(id).download()
 See Examples for more details
 
 ##Examples
-TODO
+To run the example, clone the project and **cd** to example folder. Then run:
+
+```
+python -m SimpleHTTPServer 8000
+```
+
+Open any browser and run ***localost:8000*** to see the example
 
 ##Tests
 
