@@ -5,10 +5,9 @@
 * This javascript helps convert any html element to pdf.
 
 ## Installation
-* Install pdfmake via bower
-
+* Clone it from Github
 ```
-bower install pdfmake --save
+$ git clone https://github.com/DaoGatech/pdf_converter_js.git
 ```
 
 ## Usage
