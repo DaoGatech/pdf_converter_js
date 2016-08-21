@@ -15,5 +15,6 @@ describe('init test', function() {
 mockDom = function() {
     var test_div = document.createElement('div')
     test_div.id = 'test_div'
+    test_div.appendChild(document.createElement('table'))
     document.body.appendChild(test_div)
 }
