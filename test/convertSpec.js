@@ -7,7 +7,7 @@ describe('init test', function() {
         mockDom()
     })
 
-    it('placeholder test case', function() {
+    it('#test case 1', function() {
         convertToPdf('test_div')
     })
 })
